@@ -1,0 +1,42 @@
+//==Navigation bar
+
+
+nav {
+	position: $nav-position-fix;
+	width: $nav-width;
+	height: $nav-height;
+	padding: 0 $nav-padding-left-and-right;
+	@extend .vertical-align;
+	img {
+		height: $nav-logo-height;
+	}
+
+	ul {
+		display: inline-block;
+		padding: 0;
+		margin: $nav-ul-margin-top-and-bottom 0;
+		height: $nav-ul-height;
+		
+		li {
+			list-style: none;
+		}
+	}
+	&.menu-left {
+		@extend .text-left;
+		ul li{
+			float: left;
+			padding-right: $nav-menu-padding-between;
+		}
+		img {
+		float: right; }
+	}
+	&.menu-right {
+		@extend .text-right;
+		ul li {
+			float: right;
+			padding-left: $nav-menu-padding-between;
+		}
+		img {
+			float: left; }
+	}
+}

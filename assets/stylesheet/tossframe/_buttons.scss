@@ -1,0 +1,43 @@
+//==Buttons 
+
+%btn {
+	display: $btn-base-display;
+	font-weight: $btn-base-font-weight;
+	text-align: $btn-base-text-align;
+	vertical-align: $btn-base-vertical-align;
+	@include button-size($btn-base-padding-vertical, $btn-base-padding-horizontal, $btn-base-font-size, $btn-base-line-height, $btn-base-border-radius);
+	text-decoration: $btn-base-text-decoration;
+	& * {
+		margin: $btn-base-text-margin;
+	}
+}
+
+
+.btn-normal {
+	@extend %btn;
+	@include button-sytle($blue-dimmed, $white, lighten(gray, 30%), lighten(gray, 30%));
+}
+.btn-next {
+	@extend %btn;
+	@include button-sytle($white, $sky, $sky-dimmed, $sky-dimmed);
+}
+.btn-success {
+	@extend %btn;
+	@include button-sytle($white, $green, $green-dimmed, $green-dimmed);
+}
+.btn-warning-dark {
+	@extend %btn;
+	@include button-sytle($white, $yellow, $yellow-dimmed, $yellow-dimmed);
+}
+.btn-warning-bright {
+	@extend %btn;
+	@include button-sytle($white, $orange, $orange-dimmed, $orange-dimmed);
+}
+.btn-failed {
+	@extend %btn;
+	@include button-sytle($white, $red, none, $red-dimmed);
+}
+.btn-tint {
+	@extend %btn;
+	@include button-sytle($white, $blue, none, $blue-dimmed);
+}

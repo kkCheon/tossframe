@@ -1,0 +1,49 @@
+// Mixins
+// --------------------------------------------------
+
+// Utilities
+// Components
+
+// Layout
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.vertical-align *{
+	@include vertical-align();
+}
+
+//Buttons
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}
+
+//Box Shadow
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+          box-shadow: $shadow;
+}
+
+
+@mixin button-sytle($color, $background, $border-color, $shadow-color) {
+	
+	color: $color;
+	background-color: $background;
+	border: $btn-base-border-width $btn-base-border-style $border-color;
+	@include box-shadow($btn-base-h-shadow $btn-base-w-shadow $shadow-color);
+	
+}
+
+
+
+
+
+
+

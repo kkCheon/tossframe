@@ -1,0 +1,64 @@
+// Grid system
+//----------------
+//
+//그리드의 구조를 정의한다.
+
+//웹브라우져가 기본으로 적용하는 style제
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+//모든 요소의 padding은 box-size를 넘을 수 없다.
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+// Section의 간격
+
+section {
+	padding: $section-padding-top $section-padding-left-and-right $section-padding-bottom $section-padding-left-and-right;
+}
+
+
+// Container의 크기는 Column의 크기의 총 합과 같다.
+.row {
+
+	width: $row-width;
+
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	// Column의 float과 Column 사이의 간격을 정의.
+	[class*='col-'] {
+		float: $column-float-side;
+		padding: $column-padding-top ($column-padding-between / 2) $column-padding-bottom ($column-padding-between / 2);
+
+		&:first-of-type { padding-left: $column-padding-left; }
+		&:last-of-type { padding-right: $column-padding-right; }
+	}
+
+}
+
+
+
+
+//컬럼의 폭을 정의. 12단 그리드이며 폭의 너비는 100%/단 으로 정의된다.
+@for $i from 1 through 12 {
+ 
+    .col-#{$i} { 
+        width: 100% / 12 * $i;
+    }
+ 
+}
+
+
+
+
+

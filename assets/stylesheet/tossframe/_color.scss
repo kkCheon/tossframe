@@ -1,0 +1,33 @@
+//Color System
+
+
+
+// Color themes
+$colors: (
+	white: $white,
+	white-dimmed: $white-dimmed,
+	sky: $sky,
+	sky-dimmed: $sky-dimmed,
+	green: $green,
+	green-dimmed: $green-dimmed,
+	yellow: $yellow,
+	yellow-dimmed: $yellow-dimmed,
+	orange: $orange,
+	orange-dimmed: $orange-dimmed,
+	red: $red,
+	red-dimmed: $red-dimmed,
+	blue: $blue,
+	blue-dimmed: $blue-dimmed
+);
+
+@mixin background-color($name, $color) {
+
+	.#{$name} {
+		background-color: $color;
+	}
+
+}
+
+@each $name, $color in $colors {
+	@include background-color($name, $color);
+}
