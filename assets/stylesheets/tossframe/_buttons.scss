@@ -10,34 +10,78 @@
 	& * {
 		margin: $btn-base-text-margin;
 	}
+
+	
 }
 
 
 .btn-normal {
 	@extend %btn;
-	@include button-sytle($blue-dimmed, $white, lighten(gray, 30%), lighten(gray, 30%));
+	@include button-sytle($blue-500, white, lighten(gray, 30%), lighten(gray, 30%));
 }
 .btn-next {
 	@extend %btn;
-	@include button-sytle($white, $sky, $sky-dimmed, $sky-dimmed);
+	@include button-sytle(white, $sky-500, $sky-600, $sky-600);
 }
 .btn-success {
 	@extend %btn;
-	@include button-sytle($white, $green, $green-dimmed, $green-dimmed);
+	@include button-sytle(white, $green-500, $green-600, $green-600);
 }
 .btn-warning-dark {
 	@extend %btn;
-	@include button-sytle($white, $yellow, $yellow-dimmed, $yellow-dimmed);
+	@include button-sytle(white, $yellow-500, $yellow-600, $yellow-600);
 }
 .btn-warning-bright {
 	@extend %btn;
-	@include button-sytle($white, $orange, $orange-dimmed, $orange-dimmed);
+	@include button-sytle(white, $orange-500, $orange-600, $orange-600);
 }
 .btn-failed {
 	@extend %btn;
-	@include button-sytle($white, $red, none, $red-dimmed);
+	@include button-sytle(white, $red-500, none, $red-600);
 }
 .btn-tint {
 	@extend %btn;
-	@include button-sytle($white, $blue, none, $blue-dimmed);
+	@include button-sytle(white, $blue-500, none, $blue-600);
 }
+.btn-tint-type2 {
+	@extend %btn;
+	@include button-sytle(white, $blue-500, none, $blue-600);
+	/* Rectangle 29: */
+	background-image: linear-gradient(-180deg, #618AFA 2%, #4E7BFA 53%, #4771E6 99%);
+	box-shadow: 0px 1px 0px 0px #37569E, inset 0px 1px 0px 0px #A7BEFC;
+	border-radius: 4px;
+
+	&:hover,
+	&:focus {
+	/* Rectangle 29: */
+	background-image:none;
+	background-color: $blue-600;
+	border-radius: 4px;
+	box-shadow: 0px 1px 0px 0px #4771E6, inset 0px 1px 0px 0px $blue-900;
+	color: $gray-200;
+	}
+}
+.btn-normal-type2 {
+	@extend %btn;
+	@include button-sytle(white, $blue-500, none, $blue-600);
+	/* Rectangle 29: */
+	background-image: linear-gradient(-180deg, #FFFFFF 2%, #F0F1F5 53%, #E8E9ED 99%);
+	box-shadow: 0px 1px 0px 0px $gray-400, inset 0px 1px 0px 0px $gray-100;
+	border-radius: 4px;
+	color: $gray-900;
+
+	&:hover,
+	&:focus {
+	/* Rectangle 29: */
+	/* Rectangle 29: */
+background-image: none;
+box-shadow: 0px 1px 0px 0px #DCDDE0, inset 0px 1px 0px 0px $gray-400;
+background-color: $gray-300;
+border-radius: 4px;
+	color: black;
+	}
+
+
+}
+
+

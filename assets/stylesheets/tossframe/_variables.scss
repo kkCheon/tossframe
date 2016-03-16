@@ -1,13 +1,55 @@
 // Variables
-// --------------------------------------------------
+// -------------------------------------------
 
-//== Grid system
-//
-// row는 행(가로줄)이며 column은 행 안에 위치한 열(세로줄)입니다.
-// 전체 body(문서)는 하나 또는 여럿의 row로 이루어져 있으며 row는 하나 또는 여럿의 column으로 이루어져 있습니다.
-// column은 반드시 row안에 위치해야 합니다.
+$body-max-widht:				none !default;
+//== Normalize
+// 기본 elements의 여백, 메뉴의 Bullet 등을 제거합니다.
 
+$list-margin-default:			0px !default;
+$list-padding-default:			0px !default;
+$li-text-decoration:			none !default;
 
+//--------------------------------------------------
+//==Color System
+
+$sky-500:						#5BB0EC	!default;
+$sky-600:						#4294cf !default;
+
+$green-500:						#00c117	!default;
+$green-600:						#00a113	!default;
+
+$yellow-500:					#ffbc00	!default;
+$yellow-600:					#E0A500	!default;
+
+$orange-500:					#f57f0a	!default;
+$orange-600:					#d66f09	!default;
+
+$red-500:						#db5237	!default;
+$red-600:						#BD472F	!default;
+
+$blue-50:						#D9E4FF !default;
+$blue-100:						#C9D9FF !default;
+$blue-200:						#A7BEFC !default;
+$blue-300:						#84A2F5 !default;
+$blue-400:						#618AFA !default;
+$blue-500:						#4E7BFA	!default;
+$blue-600:						#4771E6	!default;
+$blue-700:						#4269D4 !default;
+$blue-800:						#3E63BC !default;
+$blue-900:						#37569E !default;
+
+$gray-50:						#F7F8FC !default;
+$gray-100:						#F0F1F5 !default;
+$gray-200:						#E8E9ED !default;
+$gray-300:						#DCDDE0 !default;
+$gray-400:						#B9BABD !default;
+$gray-500:						#9B9C9E	!default;
+$gray-600:						#737375	!default;
+$gray-700:						#5F5F61 !default;
+$gray-800:						#414142 !default;
+$gray-900:						#202121 !default;
+
+$global-border:					solid 1px $gray-200 !default;
 
 //-------------------------------------------
 //== Typography
@@ -18,64 +60,50 @@
 // 전체 글자 체계의 크가와 간격이 그에 맞게 수정되므로, 
 // 세부 항목의 글자 비례는 특수한 상황이 아니라면, 
 // 별도의 style문서에서 수정해주시기 바랍니다.
+
+// 서체
 $font-family:					'SpoqaHanSans-Regular', "맑은 고딕", 'Sans-serif';
 $font-family-Thin:				'SpoqaHanSans-Thin' !default;
 $font-family-Regular:			'SpoqaHanSans-Regular' !default;
 $font-family-Bold:				'SpoqaHanSans-Bold' !default;
 
-$font-size-base:          		16px !default;
-$font-color-base:				black !default;
-$line-height-base:				1.6 !default;
 // 기본이 되는 글자의 크기와 높이. (p, h5가 이에 해당)
-//
+$font-size-base:          		16px !default;
+$font-color-base:				$gray-900 !default;
+$line-height-base:				1.6 !default;
 
-$word-break-point:				keep-all !default;
 // keep-all: 단어분절 // break-all: 글자분절
+$word-break-point:				keep-all !default;
 
-
+// 헤드라인 (h1 ~ h6)의 서체, 무게, 높이
 $headings-font-family:			$font-family !default;
 $headings-font-weight:			500;	
 $headings-line-height:			$line-height-base !default;
-// 헤드라인 (h1 ~ h6)의 서체, 무게, 높이
-
+// |
+// |-- 헤드라인 비례관계
+// |-- 헤드라인의 글자 크기를 기본 글자 크기의 상대값의 배수로 지정. 
+// |-- ceil과 floor는 각각 숫자를 올림과 내림한다.
 $font-size-h1:    		        floor(($font-size-base * 2.6)) !default;
 $font-size-h2:         		    floor(($font-size-base * 2.15)) !default;
 $font-size-h3:            		ceil(($font-size-base * 1.7)) !default;
 $font-size-h4:            		ceil(($font-size-base * 1.25)) !default;
 $font-size-h5:		            $font-size-base !default;
 $font-size-h6:          		ceil(($font-size-base * 0.85)) !default;
-// 헤드라인의 글자 크기를 기본 글자 크기의 상대값의 배수로 지정. 
-// ceil과 floor는 각각 숫자를 올림과 내림한다.
 
-$line-height-calculated:    	floor(($font-size-base * $line-height-base)) !default;
 // (기본 폰트 크기)에 (줄 간격으로 설정된 배수)가 곱해진 실제 글줄의 높이
+$line-height-calculated:    	floor(($font-size-base * $line-height-base)) !default;
 
+//strong 태그
+// |-- 강조하고 싶은 글자의 무게: 100 ~ 900, light, normal, bold
 $strong-font-weight:			bold !default;
-//strong 태그로 강조하고 싶은 글자의 무게: 100 ~ 900, light, normal, bold
 
-//--------------------------------------------------
-//==Color System
+//링크의 색상과 데코레이션
+$link-color:					$font-color-base !default;
+$link-color-hover:				$blue-500 !default;
+$link-hover-decoration:			none !default;
 
-$white:							#ffffff !default;
-$white-dimmed:					#eeeeee	!default;
 
-$sky:							#5BB0EC	!default;
-$sky-dimmed:					#4294cf !default;
 
-$green:							#00c117	!default;
-$green-dimmed:					#00a113	!default;
-
-$yellow:						#ffbc00	!default;
-$yellow-dimmed:					#E0A500	!default;
-
-$orange:						#f57f0a	!default;
-$orange-dimmed:					#d66f09	!default;
-
-$red:							#db5237	!default;
-$red-dimmed:					#BD472F	!default;
-
-$blue:							#4e7bfa	!default;
-$blue-dimmed:					#4167d1	!default;
 
 //---------------------------------------
 //==Button Style					
@@ -88,8 +116,8 @@ $btn-base-line-height:			$line-height-base !default;
 $btn-base-border-radius:		4px	!default;
 
 //Padding
-$btn-base-padding-vertical:		10px !default;
-$btn-base-padding-horizontal:   40px !default;
+$btn-base-padding-vertical:		8px !default;
+$btn-base-padding-horizontal:   24px !default;
 
 //Border
 $btn-base-border-width:			0px !default;
@@ -111,24 +139,97 @@ $btn-base-display:				inline-block !default;
 
 //---------------------------------
 //==Navigation bar
-// 메뉴명에 menu-left 혹은 menu-right 클래스를 추가하세요. 메뉴가 왼쪽 혹은 오른쪽으로 정렬됩니다.
-// 네비게이션은 기본적으로 수직정렬되어있습니다. 요소의 크기를 변경하더라도 자동을 정렬됩니다.
+
+// 헤더(네비게이션 + 드롭다운 메뉴)의 배경 색상, 위치: relative, absolute, fixed(상단고정)
+$header-position:					fixed !default;
+$header-font-size:					15px;
+$nav-max-width:						$body-max-widht !default;
+// 네비게이션의 위-아래 패딩, 메뉴 간격
+$nav-background-color:				white !default; 
+$nav-padding-top-bottom:			20px !default;
+$nav-menu-padding-between:			50px !default;
+$nav-right-first-menu-padding:		30px !default;
+
+// 네비게이션 로고
+$nav-logo-height:				23px !default;
+$nav-logo-float:				left !default;
+
+// 네비게이션 모바일
+// |-- 위치: relative(섹션의 contents가 아래로 밀려남), absolute(섹션의 contents가 고정됨)
+$nav-dropdown-position:			absolute !default;
+$nav-menu-btn-height-mb:		15px !default; 
+$nav-menu-cover-color:			transparentize($gray-900, 0.3) !default;
+// |
+// |-- 좌우, 상하 여백
+$nav-list-top-bottom-mb:		20px !default;
+$nav-list-left-right-mb:		15px !default;
+// |
+// |-- 박스 쉐도우
+$box-shadow-base:				1px 0px 4px 1px $gray-300 !default;
+// |
+// |-- 네비게이션 버튼 - 기본 설정값을 받습니다.
+$nav-btn-font-size:				$btn-base-font-size;
+$nav-btn-padding-top-bottom:	$btn-base-padding-vertical !default;
+$nav-btn-padding-left-right:	$btn-base-padding-horizontal !default;
+// |
+// |-- 네비게이션 구분선 - 기본 설정값을 받습니다.
+$nav-border-bottom:				$global-border;
 
 
-// 네비게이션의 위치: relative, absolute, fixed(상단고정)
-$nav-position-fix:				fixed !default; 
+//---------------------------------
+//==Footer
 
-//네비게이션의 높이, 메뉴 간격
-$nav-height:					85px !default;
-$nav-menu-padding-between:		50px !default;
+// 푸터의 최대 너비
+// |-- 배경색은 너비의 제한 없이 확장됨
+$footer-max-width:				$body-max-widht !default;
 
-// 기본 설계 - 꼭 필요한 상황이 아나리면 수정하지 마세요.
-// 네비게이션의 높이 / 2 한 값이 로고와 메뉴의 높이가 됩니다.
+// 글자크기 - 메뉴, 회사 정보
+$footer-font-size:				16px !default;
+$company-font-size:				14px !default;
 
-$nav-ul-margin-top-and-bottom:	0px !default;
-$nav-logo-margin:				$nav-ul-margin-top-and-bottom;
-$nav-logo-height:				$nav-height / 3 !default;
-$nav-ul-height:					$nav-logo-height !default;
-$nav-width:						100% !default;
+// 색상
+// |--글자색 : 리스트, 리스틑 헤드, 회사 정보와 페이스북
+$list-font-color:				$gray-700 !default;
+$list-head-font-color:			$gray-600 !default;
+$company-info-social-color:		$gray-500 !default;
+// |
+// |--배경색 : 푸터, 회사 정보, 회사정보 컨텐츠
+$footer-background-color:		$gray-50 !default;
+$company-background-color:		$footer-background-color;
+$info-background-color:			white !default;
+
+// 상하간격 - 메뉴 열(row) 메뉴 덩어리(ul), 리스트(li), 회사 정보(.company-info)
+$footer-menu-padding-bottom:	60px !default;
+$footer-ul-margin-top:			50px !default;
+$footer-li-margin-top:			23px !default;
+$company-padding-top-bottom:	36px !default;
 
 
+$Footer-border-top:				$global-border !default;
+
+$company-border-top:			$global-border !default;
+$company-logo-font-size:		$footer-font-size;
+
+// 회사 세부 정보
+$info-head-margin-bottom:		10px;
+$info-head-margin-top:			30px;
+$info-padding-top:				10px;
+$info-padding-bottom:			30px;
+$info-border-top:				$global-border !default;
+$info-font-color:				$gray-800 !default;
+
+//---------------------------------
+//==Banner
+
+$banner-text-color:				$gray-600 !default;
+$banner-border-top:				$global-border !default;
+$banner-border-bottom:			0px !default;
+$banner-padding:				34px 0 30px !default;
+
+$banner-background-color:		white !default;
+
+$banner-img-height:				24px !default;
+$banner-img-margin-left:		20px !default;
+
+$icon-c2b-margin-bottom:		8px !default;
+$icon-b2c-margin-bottom:		12px !default;

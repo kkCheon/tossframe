@@ -1,33 +1,4 @@
-@font-face {
-    font-family: 'SpoqaHanSans-Regular';
-    font-style: normal;
-    font-weight: 500;
-    src: local('SpoqaHanSans-Regular'), local('SpoqaHanSans-Regular'), local('SpoqaHanSans-Regular');
-    src: url(SpoqaHanSans-Regular.eot);
-    src: url(Regular.eot?#iefix) format('embedded-opentype'),
-    url(SpoqaHanSans-Regular.woff) format('woff'),
-    url(SpoqaHanSans-Regular.otf) format('truetype');
-}
 
-@font-face {
-    font-family: 'SpoqaHanSans-Thin';
-
-    src: local('SpoqaHanSans-Thin'), local('SpoqaHanSans-Thin'), local('SpoqaHanSans-Thin');
-    src: url(assets/fonts/SpoqaHanSans-Thin.eot);
-    src: url(assets/fonts/SpoqaHanSans-Thin.eot?#iefix) format('embedded-opentype'),
-    url(assets/fonts/SpoqaHanSans-Thin.woff) format('woff'),
-    url(assets/fonts/SpoqaHanSans-Thin.otf) format('truetype');
-}
-
-@font-face {
-    font-family: 'SpoqaHanSans-Bold';
-
-    src: local('SpoqaHanSans-Bold'), local('SpoqaHanSans-Bold'), local('SpoqaHanSans-Bold');
-    src: url(assets/fonts/SpoqaHanSans-Bold.eot);
-    src: url(assets/fonts/SpoqaHanSans-Bold.eot?#iefix) format('embedded-opentype'),
-    url(assets/fonts/SpoqaHanSans-Bold.woff) format('woff'),
-    url(assets/fonts/SpoqaHanSans-Bold.otf) format('truetype');
-}
 
 * { font-family: $font-family; }
 
@@ -87,3 +58,20 @@ strong {
 	font-weight: $strong-font-weight;
 }
 
+ul,li {
+  padding: $list-padding-default;
+  margin: $list-margin-default;
+  list-style-type: $li-text-decoration;
+}
+
+a {
+  color: $font-color-base;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $link-color-hover;
+    text-decoration: none;
+  }
+
+}

@@ -1,0 +1,118 @@
+//==Fotoer
+
+footer {
+
+	font-size: $footer-font-size;
+	background-color: $footer-background-color;
+	border-top: $Footer-border-top;
+
+	.container {
+		max-width: $footer-max-width;
+	}
+
+	a:hover, a li:hover {
+		text-decoration: none;
+	}
+
+	.footer-menu {
+		padding-bottom : $footer-menu-padding-bottom;
+		ul {
+			margin-top: $footer-ul-margin-top;
+
+			li {
+				line-height: $footer-font-size;
+				margin-top: $footer-li-margin-top;
+				color: $list-font-color;
+				
+				&:hover {
+					color: $link-color-hover;
+				}
+
+				&.list-head {
+					margin-top: 0;
+					@extend .bold;
+					color: $list-head-font-color;
+				}
+			}
+		}
+
+		
+	}
+	.company-menu {
+
+		background-color: $company-background-color;
+
+		[class*="col"] {
+			padding: $company-padding-top-bottom 0;
+			border-top: $company-border-top;
+		}
+		p {
+			padding-left: 20px;
+			display: inline-block;
+			margin-bottom: 0;
+			// &:hover,
+			// &:focus {
+			// 	color: $link-color-hover;
+			// 	cursor: pointer;
+			// }
+			text-size: 12px;
+		}
+		span.term {
+			float: right
+		}
+		.company-info, .social {
+			color: $company-info-social-color;
+		}
+	}
+	.company-info-contents {
+		display: none;
+		background-color: $info-background-color;
+		border-top: $info-border-top;
+		border-bottom: $company-border-top;
+		padding-top: $info-padding-top;
+		padding-bottom: $info-padding-bottom;
+		color: $info-font-color;
+		p {
+			display: block;
+			&:hover,
+			&:focus {
+				color: $info-font-color;
+				cursor: default;
+			}
+		}
+		.row {
+			border-top: 0px;
+		}
+		
+		[class*="col"] > *:first-child {
+			display: inline-block;
+			margin-bottom: $info-head-margin-bottom;
+			margin-top: $info-head-margin-top;
+		}
+	}	
+}
+
+
+@media screen and (max-width: 767px) {
+	footer {
+		.company-menu {
+			p {
+				font-size: $company-font-size;
+				padding: 10px 15px 0 0;
+			}
+			.row {
+				padding: 0px 15px;
+			}
+			span.term {
+				float: none;
+			}
+			.social {
+				display: none;
+			}
+			.company-logo {
+				display: block;
+				font-size: $company-logo-font-size;
+			}
+		}
+	}
+}
